@@ -12,7 +12,7 @@
     "uglify": "mkdirp public/scripts -p && uglifyjs publicsrc/scripts/*.js -m -o public/scripts/main.js",
     "imgmin": "imagemin publicsrc/images/* -o public/images",
     "icons": "svgo -f publicsrc/images/icons && mkdirp public/images/icons -p && cp publicsrc/images/icons/* public/images/icons",
-    "serve": "browser-sync start --server --files 'public/styles/*.css, public/scripts/*.js'",
+    "serve": "browser-sync start --server ssoc --files 'public/styles/*.css, public/scripts/*.js'",
     "build:css": "npm run scss && npm run postcss",
     "build:js": "npm run lint:js && npm run uglify",
     "build:images": "npm run imgmin",
@@ -23,7 +23,7 @@
     "watch:all": "npm-run-all -p serve watch:css watch:js watch:images",
     "dev": "npm run build:all && npm run watch:all",
     "postinstall": "npm run dev",
-    "start": "node server"
+    "start": "node ssoc"
   },
   "repository": {
     "type": "git",

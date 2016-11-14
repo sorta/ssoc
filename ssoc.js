@@ -1,8 +1,11 @@
 var express = require('express'),
   logger = require('morgan'),
-  app = express(),
-  app.use('/static', express.static(path.join(__dirname, 'public'))),
-  app.set('view engine', 'pug');
+  path = require('path'),
+  app = express()
+
+app.use('/static', express.static(path.join(__dirname, 'public')))
+
+app.set('view engine', 'pug')
 
 app.get('/', function (req, res) {
   res.render('index', { title: 'Hey' })
