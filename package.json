@@ -4,7 +4,26 @@
   "description": "Personal site",
   "main": "ssoc.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "clean": "rimraf public/{styles/*,scripts/*,images/*}",
+    "scss": "node-sass --output-style compressed -o public/styles publicsrc/styles",
+    "postcss": "postcss -u autoprefixer -r public/styles/*",
+    "lint:js": "eslint publicsrc/scripts",
+    "uglify": "mkdirp public/scripts -p && uglifyjs publicsrc/scripts/*.js -m -o public/scripts/main.js",
+    "imgmin": "imagemin publicsrc/images/* -o public/images",
+    "icons": "svgo -f publicsrc/images/icons && mkdirp public/images/icons -p && cp publicsrc/images/icons/* public/images/icons",
+    "serve": "browser-sync start --server --files 'public/styles/*.css, public/scripts/*.js'",
+    "build:css": "npm run scss && npm run postcss",
+    "build:js": "npm run lint:js && npm run uglify",
+    "build:images": "npm run imgmin",
+    "build:all": "npm run build:css && npm run build:js && npm run build:images",
+    "watch:css": "onchange 'publicsrc/styles/*.scss' -- npm run build:css",
+    "watch:js": "onchange 'publicsrc/scripts/*.js' -- npm run build:js",
+    "watch:images": "onchange 'publicsrc/images/*' -- npm run build:images",
+    "watch:all": "npm-run-all -p serve watch:css watch:js watch:images",
+    "dev": "npm run build:all && npm run watch:all",
+    "postinstall": "npm run dev",
+    "start": "node server"
   },
   "repository": {
     "type": "git",
@@ -20,9 +39,18 @@
   "dependencies": {
     "express": "^4.14.0",
     "morgan": "^1.7.0",
-    "node-sass": "^3.12.0",
-    "nodemon": "^1.11.0",
-    "postcss": "^5.2.5",
     "pug": "^2.0.0-beta6"
+  },
+  "devDependencies": {
+    "autoprefixer": "^6.5.3",
+    "browser-sync": "^2.17.6",
+    "eslint": "^3.10.0",
+    "imagemin-cli": "^3.0.0",
+    "mkdirp": "^0.5.1",
+    "node-sass": "^3.12.1",
+    "npm-run-all": "^3.1.1",
+    "onchange": "^3.0.2",
+    "postcss-cli": "^2.6.0",
+    "rimraf": "^2.5.4"
   }
 }
