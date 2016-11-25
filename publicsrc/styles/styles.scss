@@ -10,6 +10,7 @@ $heading-font-stack: 'Scope One', serif;
 // Colors
 $dark-grey: #505050;
 $yellow: #e4bf05;
+$white: #ffffff;
 
 //// Base ////
 :root {
@@ -17,7 +18,23 @@ $yellow: #e4bf05;
   font-family: $base-font-stack;
 }
 
+body {
+  margin: 0;
+  padding: 0;
+}
+
 h1, h2, h3, h4, h5, h6 {
   font-family: $heading-font-stack;
   font-weight: 400;
+}
+
+*, *:after, *:before {
+  box-sizing: border-box;
+}
+
+//// Layout ////
+
+// header
+.header-main {
+  background-color: $dark-grey;
 }
