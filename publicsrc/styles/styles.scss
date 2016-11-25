@@ -1,0 +1,23 @@
+//// Mixins ////
+
+//// Variables ////
+
+// Fonts
+$base-font-size: 100%;
+$base-font-stack: 'Roboto', sans-serif;
+$heading-font-stack: 'Scope One', serif;
+
+// Colors
+$dark-grey: #505050;
+$yellow: #e4bf05;
+
+//// Base ////
+:root {
+  font-size: $base-font-size;
+  font-family: $base-font-stack;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: $heading-font-stack;
+  font-weight: 400;
+}
