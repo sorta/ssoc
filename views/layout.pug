@@ -6,13 +6,14 @@ html
     block head
       <link href="https://fonts.googleapis.com/css?family=Roboto:400,400i,700|Scope+One" rel="stylesheet" />
       <link href="/static/styles/styles.css" rel="stylesheet" />
-      link(rel="icon")(href="/favicon.ico")
+      link(rel="icon" href="/favicon.ico")
   body
     block header
-      header.header-main
-        a.logo(href="/")
-          img.logo__img(alt="logo")(src="/static/images/logo5.png")
-          div.logo__name Sophie Orta
-          div.logo__title Web Developer
+      header.header-main.clr
+        a.logo.clr(href="/")
+          img.logo__img(alt="logo" src="/static/images/logo5.png")
+          div.logo__text
+            div.logo__name Sophie Orta
+            div.logo__title Web Developer
 
     block content

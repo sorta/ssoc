@@ -12,6 +12,9 @@ $dark-grey: #505050;
 $yellow: #e4bf05;
 $white: #ffffff;
 
+// Sizes
+$pad1: .5rem;
+
 //// Base ////
 :root {
   font-size: $base-font-size;
@@ -28,6 +31,12 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 400;
 }
 
+a {
+  color: inherit;
+  font-weight: 700;
+  text-decoration: none;
+}
+
 *, *:after, *:before {
   box-sizing: border-box;
 }
@@ -37,4 +46,47 @@ h1, h2, h3, h4, h5, h6 {
 // header
 .header-main {
   background-color: $dark-grey;
+  padding: $pad1;
+}
+
+//// Modules ////
+
+// Logo
+.logo {
+  display: block;
+  float: left;
+  padding: 0 $pad1;
+}
+
+.logo__img,
+.logo__text {
+  float: left;
+}
+
+.logo__img {
+  width: 4rem;
+  margin-right: $pad1;
+}
+
+.logo__name,
+.logo__title {
+  font-family: $heading-font-stack;
+  color: $white;
+  line-height: 1.2;
+}
+
+.logo__name {
+  font-size: 2rem;
+}
+
+.logo__title {
+  font-size: 1.5rem;
+  font-weight: 400;
+}
+
+//// Utils ////
+.clr:after {
+  content: "";
+  display: block;
+  clear: both;
 }
