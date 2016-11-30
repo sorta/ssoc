@@ -1,11 +1,11 @@
 var gulp = require('gulp');
 var watch = require('gulp-watch');
-var shell = require('gulp-shell')
 
 var sass = require('gulp-sass');
 var uglify = require('gulp-uglify');
 var rename = require('gulp-rename');
 var sourcemaps = require('gulp-sourcemaps');
+var nodemon = require('gulp-nodemon');
 
 var postcss = require('gulp-postcss');
 var autoprefixer = require('autoprefixer');
@@ -15,7 +15,7 @@ var cssnano = require('cssnano');
 var paths = {
 	'styles': {
 		src: './publicsrc/styles/**/*.scss',
-		output: './public/styles/'
+		dest: './public/styles/'
 	},
 	'scripts': {
 		src: ['./publicsrc/scripts/**/*.js'],
@@ -29,20 +29,17 @@ var processors = [
 	cssnano
 ];
 
-gulp.task('watch:sass', function () {
-	gulp.watch(paths.styles.src, ['sass']);
-});
 
-gulp.task('sass', function(){
+gulp.task('build:styles', function(){
 	gulp.src(paths.styles.src)
 		.pipe(sourcemaps.init())
 			.pipe(sass().on('error', sass.logError))
 			.pipe(postcss(processors))
 		.pipe(sourcemaps.write('.'))
-		.pipe(gulp.dest(paths.styles.output));
+		.pipe(gulp.dest(paths.styles.dest));
 });
 
-gulp.task('scripts', function(){
+gulp.task('build:scripts', function(){
 	gulp.src(paths.scripts.src)
 		.pipe(sourcemaps.init())
 			.pipe(uglify())
@@ -51,8 +48,22 @@ gulp.task('scripts', function(){
 		.pipe(gulp.dest(paths.scripts.dest));
 });
 
+gulp.task('build', ['build:styles', 'build:scripts']);
+
 gulp.task('watch:scripts', function () {
 	gulp.watch(paths.scripts.src, ['scripts']);
 });
 
-gulp.task('watch', ['watch:sass']););
+gulp.task('watch:styles', function () {
+	gulp.watch(paths.styles.src, ['styles']);
+});
+
+gulp.task('watch', ['watch:styles', 'watch:scripts']);
+
+gulp.task('serve', function(){
+	nodemon({
+		script: 'ssoc.js'
+	});
+});
+
+gulp.task('dev', ['build', 'watch', 'serve']);
