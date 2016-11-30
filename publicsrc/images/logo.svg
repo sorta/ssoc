@@ -3,5 +3,6 @@
   <defs>
     <style id="bx-google-fonts">@import url(https://fonts.googleapis.com/css?family=Scope+One:400);</style>
   </defs>
-  <text x="5.42" y="86.886" transform="matrix(1, 0, 0, 0.964105, 1.617198, 1.589261)" style="fill: rgb(80, 80, 80); font-family: &quot;Scope One&quot;; font-size: 93.3508px; stroke: rgb(80, 80, 80); white-space: pre;" bx:origin="-1.672 -0.689">SO</text>
+  <rect width="128" height="128" style="stroke-width: 0; fill: rgb(228, 191, 5);" rx="64" ry="64"/>
+  <text x="5.42" y="86.886" transform="matrix(1, 0, 0, 0.964105, 17.601564, 28.711895)" style="fill: rgb(80, 80, 80); font-family: &quot;Scope One&quot;; font-size: 155.585px; stroke: rgb(80, 80, 80); stroke-linecap: round; stroke-linejoin: round; white-space: pre;" bx:origin="-1.672 -0.689">S</text>
 </svg>

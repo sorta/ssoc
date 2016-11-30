@@ -2,10 +2,11 @@ doctype html
 html
   head
     block title
-      title sortasophieorta.com
+      title Sophie Orta: Web Developer
     block head
-      <link href="https://fonts.googleapis.com/css?family=Roboto:400,400i,700|Scope+One" rel="stylesheet" />
-      <link href="/static/styles/styles.css" rel="stylesheet" />
+      link(href="https://fonts.googleapis.com/css?family=Roboto:400,400i,700|Scope+One" rel="stylesheet")
+      link(href="/static/styles/normalize.css" rel="stylesheet")
+      link(href="/static/styles/styles.css" rel="stylesheet")
       link(rel="icon" href="/favicon.ico")
 
       meta(content="width=device-width, initial-scale=1" name="viewport")
@@ -14,7 +15,8 @@ html
       header.header-main.clr
         div.grid
           a.logo.clr(href="/")
-            img.logo__img(alt="logo" src="/static/images/logo5.png")
+            //- img.logo__img(alt="logo" src="/static/images/logo.png")
+            img.logo__img(alt="logo" src="/static/images/logo.svg")
             div.logo__text
               div.logo__name Sophie Orta
               div.logo__title Web Developer

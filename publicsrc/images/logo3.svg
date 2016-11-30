@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<svg viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg" xmlns:bx="https://boxy-svg.com">
-  <defs>
-    <style id="bx-google-fonts">@import url(https://fonts.googleapis.com/css?family=Scope+One:400);</style>
-  </defs>
-  <rect width="128" height="128" style="stroke-width: 0; fill: rgb(80, 80, 80);" rx="64" ry="64"/>
-  <text x="5.42" y="86.886" transform="matrix(1, 0, 0, 0.964105, 0.617172, 8.58926)" style="fill: rgb(228, 191, 5); font-family: &quot;Scope One&quot;; font-size: 93.3508px; stroke: rgb(80, 80, 80); white-space: pre;" bx:origin="-1.672 -0.689">SO</text>
-</svg>

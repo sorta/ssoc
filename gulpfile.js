@@ -6,6 +6,7 @@ var uglify = require('gulp-uglify');
 var rename = require('gulp-rename');
 var sourcemaps = require('gulp-sourcemaps');
 var nodemon = require('gulp-nodemon');
+var imagemin = require('gulp-imagemin');
 
 var postcss = require('gulp-postcss');
 var autoprefixer = require('autoprefixer');
@@ -20,6 +21,10 @@ var paths = {
 	'scripts': {
 		src: ['./publicsrc/scripts/**/*.js'],
 		dest: './public/scripts/'
+	},
+	'images': {
+		src: ['./publicsrc/images/**/*.jpg', './publicsrc/images/**/*.jpeg', './publicsrc/images/**/*.png', './publicsrc/images/**/*.svg'],
+		dest: './public/images/'
 	}
 
 };
@@ -28,7 +33,6 @@ var processors = [
 	autoprefixer,
 	cssnano
 ];
-
 
 gulp.task('build:styles', function(){
 	gulp.src(paths.styles.src)
@@ -48,17 +52,27 @@ gulp.task('build:scripts', function(){
 		.pipe(gulp.dest(paths.scripts.dest));
 });
 
-gulp.task('build', ['build:styles', 'build:scripts']);
+gulp.task('build:images', function(){
+	gulp.src(paths.images.src)
+		.pipe(imagemin())
+		.pipe(gulp.dest(paths.images.dest));
+});
+
+gulp.task('build', ['build:styles', 'build:scripts', 'build:images']);
 
 gulp.task('watch:scripts', function () {
-	gulp.watch(paths.scripts.src, ['scripts']);
+	gulp.watch(paths.scripts.src, ['build:scripts']);
 });
 
 gulp.task('watch:styles', function () {
-	gulp.watch(paths.styles.src, ['styles']);
+	gulp.watch(paths.styles.src, ['build:styles']);
 });
 
-gulp.task('watch', ['watch:styles', 'watch:scripts']);
+gulp.task('watch:images', function () {
+	gulp.watch(paths.images.src, ['build:images']);
+});
+
+gulp.task('watch', ['watch:styles', 'watch:scripts', 'watch:images']);
 
 gulp.task('serve', function(){
 	nodemon({
