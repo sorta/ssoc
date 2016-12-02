@@ -38,6 +38,9 @@ $heading-font-stack: 'Scope One', serif;
 $dark-grey: #505050;
 $yellow: #e4bf05;
 $white: #ffffff;
+$red: #e63905;
+$fuchsia: #e605d3;
+$blue: #0588e6;
 
 // Sizes
 $pad1: .5rem;
@@ -241,6 +244,11 @@ a {
   justify-content: center;
   align-items: center;
   flex: 1 1 auto;
+}
+
+.hero--html {
+  background-color: $dark-grey;
+  color: $yellow;
 }
 
 //// Utils ////
