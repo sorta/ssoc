@@ -60,6 +60,8 @@ html {
 body {
   margin: 0;
   padding: 0;
+  width: 100%;
+  overflow-x: hidden;
 }
 
 h1, h2, h3, h4, h5, h6, p {
@@ -114,7 +116,7 @@ a {
 // header
 .header-main {
   background-color: $dark-grey;
-  position: fixed;
+  // position: fixed;
   top: 0;
   left: 0;
   right: 0;
@@ -225,7 +227,7 @@ a {
   font-weight: 700;
   // padding: 100px 0 0 0;
   text-align: center;
-
+  padding: $pad1;
 
   h1, h4 {
     font-weight: 700;
@@ -236,14 +238,40 @@ a {
   width: auto;
   display: inline-block;
   // text-align: left;
-  padding: $pad1;
+  // padding: $pad1;
 
   display: flex;
   flex-direction: column;
   flex-wrap: no-wrap;
   justify-content: center;
-  align-items: center;
+  align-items: stretch;
   flex: 1 1 auto;
+}
+
+.triple-town {
+  margin: 0;
+  min-height: 33.3333vh;
+  border-top: $pad1 solid currentColor;
+  border-bottom: $pad1 solid currentColor;
+  border-top-width: calc(33.3333vh / 2 - 3rem);
+  border-bottom-width: calc(33.3333vh / 2 - 3rem);
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: transform .5s;
+}
+
+.js .triple-town:nth-of-type(2n) {
+  transform: translateX(100%);
+}
+
+.js .triple-town:nth-of-type(2n+1) {
+  transform: translateX(-100%);
+}
+
+.js .triple-town.active {
+  transform: translateX(0);
 }
 
 .hero--html {
@@ -260,4 +288,8 @@ a {
 
 .w-auto {
   width: auto;
+}
+
+.p-0 {
+  padding: 0;
 }

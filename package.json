@@ -6,6 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "clean": "rimraf public/{styles/*,scripts/*,images/*}",
+    "build": "gulp build",
     "gulp": "gulp",
     "dev": "gulp dev",
     "start": "node ssoc"
