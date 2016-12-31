@@ -31,6 +31,7 @@
 
 // Fonts
 $base-font-size: 100%;
+$max-font-size: 125%;
 $base-font-stack: 'Roboto', sans-serif;
 $heading-font-stack: 'Scope One', serif;
 
@@ -55,6 +56,14 @@ html {
   font-size: $base-font-size;
   font-family: $base-font-stack;
   color: $dark-grey;
+
+  // @include for-small-up {
+  //   font-size: calc(100% + (125 - 100) * ((100vw - 600px)/(1200 - 600)))
+  // }
+  //
+  // @include for-large-up {
+  //   font-size: 125%;
+  // }
 }
 
 body {
@@ -64,7 +73,7 @@ body {
   overflow-x: hidden;
 }
 
-h1, h2, h3, h4, h5, h6, p {
+h1, h2, h3, h4, h5, h6 {
   font-family: $heading-font-stack;
   font-weight: 400;
   margin-top: 0;
