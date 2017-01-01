@@ -23,6 +23,7 @@
   "homepage": "https://github.com/sorta/ssoc#readme",
   "private": true,
   "dependencies": {
+    "compression": "^1.6.2",
     "express": "^4.14.0",
     "morgan": "^1.7.0",
     "normalize.css": "^5.0.0",

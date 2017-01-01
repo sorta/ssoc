@@ -2,8 +2,10 @@ var express = require('express'),
   logger = require('morgan'),
   path = require('path'),
   favicon = require('serve-favicon'),
-  app = express()
+  app = express(),
+  compression = require('compression')
 
+app.use(compression());
 app.use('/static', express.static(path.join(__dirname, 'public')))
 app.use('/static/docs', express.static(path.join(__dirname, 'docs')))
 app.use(favicon(path.join(__dirname, '/favicon.ico')))
