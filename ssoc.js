@@ -5,6 +5,7 @@ var express = require('express'),
   app = express()
 
 app.use('/static', express.static(path.join(__dirname, 'public')))
+app.use('/static/docs', express.static(path.join(__dirname, 'docs')))
 app.use(favicon(path.join(__dirname, '/favicon.ico')))
 
 app.set('view engine', 'pug')
