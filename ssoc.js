@@ -10,6 +10,8 @@ app.use('/static', express.static(path.join(__dirname, 'public')))
 app.use('/static/docs', express.static(path.join(__dirname, 'docs')))
 app.use(favicon(path.join(__dirname, '/favicon.ico')))
 
+app.locals.basedir = __dirname
+
 app.set('view engine', 'pug')
 
 app.get('/', function (req, res) {
