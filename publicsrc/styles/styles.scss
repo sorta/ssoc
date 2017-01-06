@@ -71,6 +71,7 @@ body {
   padding: 0;
   width: 100%;
   overflow-x: hidden;
+  background-color: $yellow;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -283,6 +284,7 @@ a {
   display: inline-block;
   margin: 0 $pad1;
   min-width: 45px;
+  cursor: pointer;
 }
 
 .connect-link__image {
