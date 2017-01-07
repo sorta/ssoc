@@ -110,11 +110,20 @@ h6 {
   margin-bottom: .85rem;
 }
 
-
 a {
   color: inherit;
   font-weight: 700;
   text-decoration: none;
+}
+
+p {
+  margin-top: 0;
+}
+
+img {
+  width: auto;
+  height: auto;
+  max-width: 100%;
 }
 
 *, *:after, *:before {
@@ -276,6 +285,7 @@ a {
   text-align: center;
 }
 
+// Connect Link
 .connect-link-container {
   text-align: center;
 }
@@ -283,13 +293,25 @@ a {
 .connect-link {
   display: inline-block;
   margin: 0 $pad1;
-  min-width: 45px;
+  min-width: 3rem;
   cursor: pointer;
 }
 
 .connect-link__image {
   width: 100%;
   height: auto;
+}
+
+.page-header {
+  text-align: center;
+  margin-top: 2.1rem;
+}
+
+// Sidebar
+.sidebar {
+  background-color: $dark-grey;
+  color: $yellow;
+  border-radius: $pad1;
 }
 
 //// Utils ////
@@ -299,10 +321,13 @@ a {
   clear: both;
 }
 
-.w-auto {
-  width: auto;
-}
+.w-auto { width: auto; }
 
-.p-0 {
-  padding: 0;
-}
+.p-0 { padding: 0; }
+
+.t-left { text-align: left; }
+.t-center { text-align: center; }
+.t-right { text-align: right; }
+
+.bg-dark-grey { background-color: $dark-grey; }
+.bg-yellow { background-color: $yellow; }
