@@ -4,7 +4,7 @@ html
     block title
       title Sophie Orta: Web Developer
     block head
-      link(href="https://fonts.googleapis.com/css?family=Roboto:400,400i,700|Scope+One" rel="stylesheet")
+      link(href="/static/fonts/fonts.min.css" rel="stylesheet")
       link(href="/static/styles/normalize.css" rel="stylesheet")
       link(href="/static/styles/styles.css" rel="stylesheet")
       link(rel="icon" href="/favicon.ico")
@@ -15,7 +15,6 @@ html
       header.header-main.clr
         div.grid
           a.logo.clr(href="/")
-            //- img.logo__img(alt="logo" src="/static/images/logo.png")
             div.logo__img(alt="logo" src="/static/images/logo.svg")
               include /public/images/logo.svg
             div.logo__text

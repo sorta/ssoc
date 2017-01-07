@@ -311,7 +311,10 @@ img {
 .sidebar {
   background-color: $dark-grey;
   color: $yellow;
-  border-radius: $pad1;
+
+  @include for-medium-up {
+    border-radius: $pad1;
+  }
 }
 
 //// Utils ////
