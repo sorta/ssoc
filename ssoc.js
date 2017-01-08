@@ -3,15 +3,24 @@ var express = require('express'),
   path = require('path'),
   favicon = require('serve-favicon'),
   app = express(),
-  compression = require('compression')
+  compression = require('compression'),
+  slash = require('express-slash'),
+  uncapitalize = require('express-uncapitalize')
 
 app.use(compression())
-app.use('/static', express.static(path.join(__dirname, 'public')))
-app.use('/static/docs', express.static(path.join(__dirname, 'docs')))
+app.use('/static/', express.static(path.join(__dirname, 'public')))
+app.use('/static/docs/', express.static(path.join(__dirname, 'docs')))
 app.use(favicon(path.join(__dirname, '/favicon.ico')))
 
-app.locals.basedir = __dirname
+app.enable('strict routing')
+var router = express.Router({
+    caseSensitive: app.get('case sensitive routing'),
+    strict       : app.get('strict routing')
+})
+app.use(uncapitalize())
+app.use(router)
 
+app.locals.basedir = __dirname
 app.set('view engine', 'pug')
 
 // Routes
@@ -22,6 +31,9 @@ app.get('/', function (req, res) {
 app.get('/about/', function (req, res) {
   res.render('about', {})
 })
+
+// Slashes redirect
+app.use(slash())
 
 // 404
 app.use(function (req, res, next) {
