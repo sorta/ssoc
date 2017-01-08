@@ -4,7 +4,8 @@ html
     block title
       title Sophie Orta: Web Developer
     block head
-      link(href="/static/fonts/fonts.min.css" rel="stylesheet")
+
+      //- link(href="/static/fonts/fonts.min.css" rel="stylesheet")
       link(href="/static/styles/normalize.css" rel="stylesheet")
       link(href="/static/styles/styles.css" rel="stylesheet")
       link(rel="icon" href="/favicon.ico")
@@ -30,6 +31,12 @@ html
           span &copy; Sophie Orta 2017
           a(href="/static/docs/resume.pdf" title="Resume" target="_blank").footer__link Resume
 
+    noscript#deferred-styles
+      link(href="/static/fonts/fonts.min.css" rel="stylesheet")
+    //-   link(href="/static/styles/normalize.css" rel="stylesheet")
+    //-   link(href="/static/styles/styles.css" rel="stylesheet")
+
     block scripts
-      <script>
+      script(type="text/javascript" src="/static/scripts/main.min.js" async)
+      <script type="text/javascript">
       </script>
