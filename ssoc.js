@@ -14,12 +14,18 @@ app.locals.basedir = __dirname
 
 app.set('view engine', 'pug')
 
+// Routes
 app.get('/', function (req, res) {
   res.render('index', { title: 'Hey' })
 })
 
 app.get('/about/', function (req, res) {
-  res.render('about', { title: 'Hey' })
+  res.render('about', {})
+})
+
+// 404
+app.use(function (req, res, next) {
+  res.status(404).render('404', {})
 })
 
 app.listen(process.env.PORT || 3000, function () {

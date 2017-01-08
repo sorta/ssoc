@@ -14,22 +14,22 @@ html
   body
     block header
       header.header-main.clr
-        div.grid
-          a.logo.clr(href="/")
-            div.logo__img(alt="logo" src="/static/images/logo.svg")
-              include /public/images/logo.svg
-            div.logo__text
-              div.logo__name Sophie Orta
-              div.logo__title Web Developer
+        //- div.grid
+        a.logo.clr(href="/")
+          div.logo__img(alt="logo" src="/static/images/logo.svg")
+            include /public/images/logo.svg
+          div.logo__text
+            div.logo__name Sophie Orta
+            div.logo__title Web Developer
 
     div.content-main
       block content
 
     block footer
       footer.footer-main
-        div.grid
-          span &copy; Sophie Orta 2017
-          a(href="/static/docs/resume.pdf" title="Resume" target="_blank").footer__link Resume
+        //- div.grid
+        span &copy; Sophie Orta 2017
+        a(href="/static/docs/resume.pdf" target="_blank").footer__link Resume
 
     noscript#deferred-styles
       link(href="/static/fonts/fonts.min.css" rel="stylesheet")

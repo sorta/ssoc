@@ -45,6 +45,7 @@ $blue: #0588e6;
 
 // Sizes
 $pad1: .5rem;
+$pad2: 1rem;
 
 // Grid
 $grid-max-width: 1200px;
@@ -72,6 +73,10 @@ body {
   width: 100%;
   overflow-x: hidden;
   background-color: $yellow;
+
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -126,6 +131,10 @@ img {
   max-width: 100%;
 }
 
+dt {
+  font-weight: 700;
+}
+
 *, *:after, *:before {
   box-sizing: border-box;
 }
@@ -140,10 +149,14 @@ img {
   right: 0;
 }
 
+.content-main {
+  flex: 1 1 auto;
+}
+
 .footer-main {
   background-color: $dark-grey;
   color: $yellow;
-  padding: $pad1;
+  padding: $pad1 $pad2;
 
   border-top: 1px solid $yellow;
 }
@@ -168,7 +181,7 @@ img {
 .col {
   display: block;
   float: left;
-  padding: $pad1;
+  padding: $pad2;
   width: 100%;
 }
 
@@ -208,7 +221,7 @@ img {
 .logo {
   display: block;
   float: left;
-  padding: $pad1;
+  padding: $pad1 $pad2;
 }
 
 .logo__img,
@@ -242,7 +255,7 @@ img {
 .hero {
   width: 100%;
   min-height: 100vh;
-  padding: $pad1;
+  padding: $pad2;
 
   display: flex;
   flex-direction: row;
@@ -292,7 +305,7 @@ img {
 
 .connect-link {
   display: inline-block;
-  margin: 0 $pad1;
+  margin: 0 $pad2;
   min-width: 3rem;
   cursor: pointer;
 }
@@ -311,9 +324,11 @@ img {
 .sidebar {
   background-color: $dark-grey;
   color: $yellow;
+  float: right;
 
   @include for-medium-up {
-    border-radius: $pad1;
+    border-radius: $pad2;
+    margin-bottom: $pad2;
   }
 }
 
