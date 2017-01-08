@@ -25,11 +25,11 @@ app.set('view engine', 'pug')
 
 // Routes
 app.get('/', function (req, res) {
-  res.render('index', { title: 'Hey' })
+  res.render('index', { currentPage: 'Home' })
 })
 
 app.get('/about/', function (req, res) {
-  res.render('about', {})
+  res.render('about', { currentPage: 'About' })
 })
 
 // Slashes redirect
@@ -37,7 +37,7 @@ app.use(slash())
 
 // 404
 app.use(function (req, res, next) {
-  res.status(404).render('404', {})
+  res.status(404).render('404', { currentPage: '404' })
 })
 
 app.listen(process.env.PORT || 3000, function () {

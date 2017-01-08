@@ -21,6 +21,12 @@ html
           div.logo__text
             div.logo__name Sophie Orta
             div.logo__title Web Developer
+        ul.nav
+          li.nav__item
+            a(href="/" class=(currentPage==='Home' ? 'nav__item-link active' : 'nav__item-link')) Home
+              //- img(src="/static/images/icons/home.svg" alt="Home Icon
+          li.nav__item
+            a(href="/about/" class=(currentPage==='About' ? 'nav__item-link active' : 'nav__item-link')) About
 
     div.content-main
       block content

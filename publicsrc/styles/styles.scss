@@ -46,6 +46,7 @@ $blue: #0588e6;
 // Sizes
 $pad1: .5rem;
 $pad2: 1rem;
+$pad3: 2rem;
 
 // Grid
 $grid-max-width: 1200px;
@@ -324,11 +325,36 @@ dt {
 .sidebar {
   background-color: $dark-grey;
   color: $yellow;
+  padding: $pad2;
   float: right;
 
   @include for-medium-up {
-    border-radius: $pad2;
-    margin-bottom: $pad2;
+    border-radius: $pad3;
+    border: $pad2 solid $yellow;
+    margin-top: -$pad2;
+  }
+}
+
+// Nav
+.nav {
+  float: right;
+  list-style-type: none;
+  padding: 0;
+  margin: 1.6136rem 0 0 0;
+  color: $yellow;
+
+  font-family: $heading-font-stack;
+  font-size: 2rem;
+}
+
+.nav__item {
+  float: left;
+  margin-right: $pad2;
+}
+
+.nav__item-link {
+  &.active {
+    text-decoration: underline;
   }
 }
 
@@ -346,6 +372,9 @@ dt {
 .t-left { text-align: left; }
 .t-center { text-align: center; }
 .t-right { text-align: right; }
+
+.f-left { float: left; }
+.f-right { float: right; }
 
 .bg-dark-grey { background-color: $dark-grey; }
 .bg-yellow { background-color: $yellow; }
