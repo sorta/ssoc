@@ -166,6 +166,7 @@ dt {
   float: right;
 }
 
+// Grid
 .grid {
   width: 100%;
   max-width: $grid-max-width;
@@ -186,6 +187,7 @@ dt {
   width: 100%;
 }
 
+// Column widths
 @for $i from 1 through $grid-col-count {
   .xs-up-#{$i} {
     width: $i / $grid-col-count * 100%;
@@ -216,12 +218,41 @@ dt {
   }
 }
 
+// Auto widths
+.xs-up-auto {
+  width: auto;
+}
+
+@include for-small-up {
+  .sm-up-auto {
+    width: auto;
+  }
+}
+
+@include for-medium-up {
+  .md-up-auto {
+    width: auto;
+  }
+}
+
+@include for-large-up {
+  .lg-up-auto {
+    width: auto;
+  }
+}
+
+@include for-extra-large-up {
+  .xl-up-auto {
+    width: auto;
+  }
+}
+
 //// Modules ////
 
 // Logo
 .logo {
-  display: block;
-  float: left;
+  display: inline-block;
+  // float: left;
   padding: $pad1 $pad2;
 }
 
@@ -336,20 +367,35 @@ dt {
 }
 
 // Nav
+.nav-container {
+  text-align: center;
+  padding: 0;
+
+  @include for-small-up {
+    float: right;
+  }
+}
+
 .nav {
-  float: right;
+  // float: right;
+  display: inline-block;
   list-style-type: none;
   padding: 0;
-  margin: 1.6136rem 0 0 0;
+  margin: 1.6136rem 0;
   color: $yellow;
 
   font-family: $heading-font-stack;
   font-size: 2rem;
+
+  @include for-small-up {
+    margin-bottom: 0;
+  }
 }
 
 .nav__item {
-  float: left;
+  display: inline-block;
   margin-right: $pad2;
+  margin-left: $pad2;
 }
 
 .nav__item-link {
