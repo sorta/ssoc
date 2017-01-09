@@ -124,6 +124,12 @@ a {
 
 p {
   margin-top: 0;
+
+  @supports (text-align-last: left) {
+    text-align: justify;
+    text-align-last: left;
+    text-align-last: start;
+  }
 }
 
 img {
