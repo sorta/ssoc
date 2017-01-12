@@ -292,14 +292,17 @@ dt {
 // Hero
 .hero {
   width: 100%;
-  min-height: 100vh;
-  padding: $pad2;
+  padding: ($pad2 * 4) $pad2;
+  text-align: center;
 
-  display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
-  justify-content: center;
-  align-items: stretch;
+  @supports (display: flex) {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: stretch;
+  }
 
   background-color: $yellow;
   color: $dark-grey;
@@ -313,7 +316,6 @@ dt {
 .hero--landing
 {
   font-weight: 700;
-  text-align: center;
 
   h1, h4 {
     font-weight: 700;
@@ -323,18 +325,21 @@ dt {
 .hero__content {
   width: auto;
   display: inline-block;
+  // text-align: left;
 
-  display: flex;
-  flex-direction: column;
-  flex-wrap: no-wrap;
-  justify-content: center;
-  align-items: stretch;
-  flex: 1 1 auto;
+  @supports (display: flex) {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: no-wrap;
+    justify-content: center;
+    align-items: stretch;
+    flex: 1 1 auto;
+  }
 }
 
-.hero__heading {
-  text-align: center;
-}
+// .hero__heading {
+//   text-align: center;
+// }
 
 // Connect Link
 .connect-link-container {
