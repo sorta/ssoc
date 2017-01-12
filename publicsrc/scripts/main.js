@@ -5,7 +5,10 @@ var loadDeferredStyles = function() {
   document.body.appendChild(replacement)
   addStylesNode.parentElement.removeChild(addStylesNode);
 };
-var raf = requestAnimationFrame || mozRequestAnimationFrame ||
-    webkitRequestAnimationFrame || msRequestAnimationFrame;
+var raf = false;
+try {
+  raf = requestAnimationFrame || mozRequestAnimationFrame || webkitRequestAnimationFrame || msRequestAnimationFrame;
+} catch (e) {}
+
 if (raf) raf(function() { window.setTimeout(loadDeferredStyles, 0); });
 else window.addEventListener('load', loadDeferredStyles);
