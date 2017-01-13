@@ -275,6 +275,11 @@ dd {
 .logo__img {
   width: 4rem;
   margin-right: $pad1;
+
+  > svg {
+    max-width: 88px;
+    max-height: 88px;
+  }
 }
 
 .logo__name,
