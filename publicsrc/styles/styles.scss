@@ -80,6 +80,10 @@ body {
   // height: 100vh;
 }
 
+*, *:after, *:before {
+  box-sizing: border-box;
+}
+
 h1, h2, h3, h4, h5, h6 {
   font-family: $heading-font-stack;
   font-weight: 400;
@@ -147,8 +151,22 @@ dd {
   margin-bottom: $pad1;
 }
 
-*, *:after, *:before {
-  box-sizing: border-box;
+.btn,
+button,
+input[type="button"],
+input[type="submit"] {
+  background-color: $dark-grey;
+  color: $yellow;
+  display: block;
+  padding: $pad1 $pad2;
+  border: none;
+  border-radius: $pad1;
+
+  &.inline { display: inline-block; }
+  &.yellow {
+    background-color: $yellow;
+    color: $dark-grey;
+  }
 }
 
 //// Layout ////
