@@ -27,7 +27,6 @@
     "express": "^4.14.0",
     "express-slash": "^2.0.1",
     "express-uncapitalize": "^1.0.0",
-    "morgan": "^1.7.0",
     "normalize.css": "^5.0.0",
     "pug": "^2.0.0-beta6",
     "serve-favicon": "^2.3.2"
@@ -35,6 +34,11 @@
   "devDependencies": {
     "autoprefixer": "^6.5.3",
     "cssnano": "^3.8.1",
+    "eslint": "^4.19.1",
+    "eslint-config-airbnb": "^16.1.0",
+    "eslint-plugin-import": "^2.11.0",
+    "eslint-plugin-jsx-a11y": "^6.0.3",
+    "eslint-plugin-react": "^7.7.0",
     "gulp": "^3.9.1",
     "gulp-imagemin": "^3.1.1",
     "gulp-nodemon": "^2.2.1",
