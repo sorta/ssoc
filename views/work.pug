@@ -1,0 +1,13 @@
+extends layout.pug
+
+block title
+  | Sophie Orta - Work
+
+block content
+  h1.page-header Work
+  div.grid
+    each manager, key in projects
+      h2.work-header #{manager.name} Projects
+      p #{manager.desc}
+    //-   div.col.md-up-4
+    //-     p #{project.name}

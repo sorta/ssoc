@@ -13,32 +13,33 @@ html(lang="en-us")
 
       meta(content="width=device-width, initial-scale=1" name="viewport")
   body
-    block header
-      header.header-main.clr
-        //- div.grid
-        div.col.xs-up-12.sm-up-auto.t-center.p-0
-          a.logo.clr(href="/")
-            div.logo__img(alt="logo" src="/static/images/logo.svg")
-              include /public/images/logo.svg
-            div.logo__text
-              div.logo__name Sophie Orta
-              div.logo__title Web Developer
-        div.col.xs-up-12.sm-up-auto.nav-container
-          ul.nav
-            li.nav__item
-              a(href="/" class=(currentPage==='Home' ? 'nav__item-link active' : 'nav__item-link')) Home
-                //- img(src="/static/images/icons/home.svg" alt="Home Icon
-            li.nav__item
-              a(href="/about/" class=(currentPage==='About' ? 'nav__item-link active' : 'nav__item-link')) About
+    div.body-container
+      block header
+        header.header-main.clr
+          //- div.grid
+          div.col.xs-up-12.sm-up-auto.t-center.p-0
+            a.logo.clr(href="/")
+              div.logo__img(alt="logo" src="/static/images/logo.svg")
+                include /public/images/logo.svg
+              div.logo__text
+                div.logo__name Sophie Orta
+                div.logo__title Web Developer
+          div.col.xs-up-12.sm-up-auto.nav-container
+            ul.nav
+              li.nav__item
+                a(href="/" class=(currentPage==='Home' ? 'nav__item-link active' : 'nav__item-link')) Home
+                  //- img(src="/static/images/icons/home.svg" alt="Home Icon
+              li.nav__item
+                a(href="/about/" class=(currentPage==='About' ? 'nav__item-link active' : 'nav__item-link')) About
 
-    div.content-main
-      block content
+      div.content-main
+        block content
 
-    block footer
-      footer.footer-main
-        //- div.grid
-        span &copy; Sophie Orta 2017
-        a(href="http://bit.ly/sorta-resume-pdf" download).footer__link Resume
+      block footer
+        footer.footer-main
+          //- div.grid
+          span &copy; Sophie Orta 2017
+          a(href="http://bit.ly/sorta-resume-pdf" download).footer__link Resume
 
     noscript#deferred-styles
       link(href="/static/fonts/fonts.min.css" rel="stylesheet")

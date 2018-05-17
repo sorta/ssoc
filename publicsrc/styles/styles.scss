@@ -74,10 +74,18 @@ body {
   width: 100%;
   overflow-x: hidden;
   background-color: $yellow;
+}
 
-  // display: flex;
-  // flex-direction: column;
-  // height: 100vh;
+.body-container {
+  min-height: 100vh;
+
+  @supports (display: flex) {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: stretch;
+  }
 }
 
 *, *:after, *:before {
@@ -179,9 +187,9 @@ input[type="submit"] {
   right: 0;
 }
 
-// .content-main {
-//   flex: 1 1 auto;
-// }
+.content-main {
+  flex: 1 1 auto;
+}
 
 .footer-main {
   background-color: $dark-grey;
