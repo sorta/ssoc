@@ -5,14 +5,26 @@ module.exports = {
     projects: {
       wusata: {
         name: 'WUSATA',
-        slug: 'wusata',
         url: 'https://www.wusata.org/',
+        img: 'wusata.png',
+        summary: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.',
+        desc: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium fuga dolore autem, nulla. Et quasi illum, iure rem accusantium id a, aspernatur dolores ea consectetur, dolorum placeat assumenda tenetur fuga.',
         external_project_url: 'https://www.avibeweb.com/work/wusata/',
       },
       'company-site': {
         name: 'A•Vibe',
-        slug: 'company-site',
         url: 'https://www.avibeweb.com/',
+        img: 'avibe.png',
+        summary: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.',
+        desc: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro, nobis excepturi voluptates enim animi iure sunt iste accusamus doloremque provident molestias vitae est assumenda, sed facilis unde ea esse facere.',
+      },
+      'green-hamer': {
+        name: 'Green Hammer',
+        url: 'http://www.greenhammer.com/',
+        img: 'wusata.png',
+        summary: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.',
+        desc: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid laboriosam similique autem, beatae dolores voluptas ab, necessitatibus nemo id, quidem quia tenetur quam, suscipit commodi inventore laudantium excepturi dicta assumenda.',
+        external_project_url: 'https://www.avibeweb.com/work/greenhammer/',
       },
     },
   },
@@ -22,9 +34,11 @@ module.exports = {
     projects: {
       ssoc: {
         name: 'SSOC',
-        slug: 'ssoc',
         url: 'https://www.sophieorta.com/',
-      }
-    }
-  }
+        img: 'ssoc.png',
+        summary: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.',
+        desc: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit, sint! Ipsam, eum perferendis. Nihil nesciunt fuga odit, animi quos consequuntur, commodi, totam ad eum adipisci necessitatibus. Voluptate quos atque dolores.',
+      },
+    },
+  },
 };

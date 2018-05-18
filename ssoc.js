@@ -36,7 +36,18 @@ app.get('/about/', (req, res) => {
 });
 
 app.get('/work/', (req, res) => {
-  res.render('work', { currentPage: 'Work', projects: projectData });
+  res.render('work', { currentPage: 'Work', managers: projectData });
+});
+
+
+app.get('/work/:manager', (req, res) => {
+  if (!{}.hasOwnProperty.call(projectData, req.params.manager)) {
+    res.status(404).render('404', { currentPage: '404' });
+  } else {
+    const managerData = {};
+    managerData[req.params.manager] = projectData[req.params.manager];
+    res.render('work', { currentPage: 'Work List', managers: managerData });
+  }
 });
 
 // Slashes redirect

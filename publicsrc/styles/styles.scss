@@ -451,6 +451,20 @@ input[type="submit"] {
   }
 }
 
+// Work
+
+.manager__header {
+  margin-top: $pad2;
+}
+
+.project__header {
+  margin-bottom: 0;
+}
+
+.project__image {
+  border: 2px solid $dark-grey;
+}
+
 //// Utils ////
 .clr:after {
   content: "";
