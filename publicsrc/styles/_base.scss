@@ -1,0 +1,125 @@
+//// Base ////
+
+:root,
+html {
+  font-size: $base-font-size;
+  font-family: $base-font-stack;
+  color: $dark-grey;
+
+  @include for-small-up {
+    font-size: calc(18px + (22 - 18) * ((100vw - 600px)/(1200 - 600)))
+  }
+
+  @include for-large-up {
+    font-size: $max-font-size;
+  }
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  overflow-x: hidden;
+  background-color: $yellow;
+}
+
+.body-container {
+  min-height: 100vh;
+
+  @supports (display: flex) {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: stretch;
+  }
+}
+
+*, *:after, *:before {
+  box-sizing: border-box;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: $heading-font-stack;
+  font-weight: 400;
+  margin-top: 0;
+}
+
+h1 {
+  font-size: 3.6rem;
+  margin-bottom: 2.1rem;
+}
+
+h2 {
+  font-size: 3rem;
+  margin-bottom: 2rem;
+}
+
+h3 {
+  font-size: 2.2rem;
+  margin-bottom: 1.5rem;
+}
+
+h4 {
+  font-size: 1.5rem;
+  margin-bottom: 1.2rem;
+}
+
+h5 {
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+
+h6 {
+  font-size: .85rem;
+  margin-bottom: .85rem;
+}
+
+a {
+  color: inherit;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+p {
+  margin-top: 0;
+  text-align: left;
+
+  @supports (text-align-last: left) {
+    text-align: justify;
+    text-align-last: left;
+    text-align-last: start;
+  }
+}
+
+img {
+  width: auto;
+  height: auto;
+  max-width: 100%;
+}
+
+dt {
+  font-weight: 700;
+}
+
+dd {
+  margin-bottom: $pad1;
+}
+
+.btn,
+button,
+input[type="button"],
+input[type="submit"] {
+  background-color: $dark-grey;
+  color: $yellow;
+  display: block;
+  padding: $pad1 $pad2;
+  border: none;
+  border-radius: $pad1;
+
+  &.inline { display: inline-block; }
+  &.yellow {
+    background-color: $yellow;
+    color: $dark-grey;
+  }
+}

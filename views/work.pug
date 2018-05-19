@@ -15,7 +15,8 @@ block content
           each project, key in manager.projects
             div.project.col.md-up-4
               h3.project__header #{project.name}
+
               if {}.hasOwnProperty.call(project, 'img')
                 img(src="/static/images/projects/" + project.img).project__image
               if {}.hasOwnProperty.call(project, 'summary')
-                p.project_summary #{project.summary}
+                p.project__summary #{project.summary}

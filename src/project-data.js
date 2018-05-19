@@ -21,7 +21,7 @@ module.exports = {
       'green-hamer': {
         name: 'Green Hammer',
         url: 'http://www.greenhammer.com/',
-        img: 'wusata.png',
+        img: 'gh.png',
         summary: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.',
         desc: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid laboriosam similique autem, beatae dolores voluptas ab, necessitatibus nemo id, quidem quia tenetur quam, suscipit commodi inventore laudantium excepturi dicta assumenda.',
         external_project_url: 'https://www.avibeweb.com/work/greenhammer/',

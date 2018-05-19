@@ -1,0 +1,28 @@
+//// Mixins ////
+
+// Media Queries
+// Breakpoint queries based on https://medium.freecodecamp.com/the-100-correct-way-to-do-css-breakpoints-88d6a5ba1862
+@mixin for-extra-small-only {
+  @media (max-width: 599px) { @content; }
+}
+@mixin for-small-up {
+  @media (min-width: 600px) { @content; }
+}
+@mixin for-small-only {
+  @media (min-width: 600px) and (max-width: 899px) { @content; }
+}
+@mixin for-medium-up {
+  @media (min-width: 900px) { @content; }
+}
+@mixin for-medium-only {
+  @media (min-width: 900px) and (max-width: 1199px) { @content; }
+}
+@mixin for-large-up {
+  @media (min-width: 1200px) { @content; }
+}
+@mixin for-large-only {
+  @media (min-width: 1200px) and (max-width: 1799px) { @content; }
+}
+@mixin for-extra-large-up {
+  @media (min-width: 1800px) { @content; }
+}

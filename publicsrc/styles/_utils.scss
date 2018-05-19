@@ -1,0 +1,20 @@
+//// Utils ////
+.clr:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+.w-auto { width: auto; }
+
+.p-0 { padding: 0; }
+
+.t-left { text-align: left; }
+.t-center { text-align: center; }
+.t-right { text-align: right; }
+
+.f-left { float: left; }
+.f-right { float: right; }
+
+.bg-dark-grey { background-color: $dark-grey; }
+.bg-yellow { background-color: $yellow; }
