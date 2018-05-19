@@ -6,7 +6,7 @@ module.exports = {
       wusata: {
         name: 'WUSATA',
         url: 'https://www.wusata.org/',
-        img: 'wusata.png',
+        img: 'wusata',
         summary: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.',
         desc: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium fuga dolore autem, nulla. Et quasi illum, iure rem accusantium id a, aspernatur dolores ea consectetur, dolorum placeat assumenda tenetur fuga.',
         external_project_url: 'https://www.avibeweb.com/work/wusata/',
@@ -14,14 +14,14 @@ module.exports = {
       'company-site': {
         name: 'A•Vibe',
         url: 'https://www.avibeweb.com/',
-        img: 'avibe.png',
+        img: 'avibe',
         summary: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.',
         desc: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro, nobis excepturi voluptates enim animi iure sunt iste accusamus doloremque provident molestias vitae est assumenda, sed facilis unde ea esse facere.',
       },
       'green-hamer': {
         name: 'Green Hammer',
         url: 'http://www.greenhammer.com/',
-        img: 'gh.png',
+        img: 'gh',
         summary: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.',
         desc: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid laboriosam similique autem, beatae dolores voluptas ab, necessitatibus nemo id, quidem quia tenetur quam, suscipit commodi inventore laudantium excepturi dicta assumenda.',
         external_project_url: 'https://www.avibeweb.com/work/greenhammer/',
@@ -35,7 +35,7 @@ module.exports = {
       ssoc: {
         name: 'SSOC',
         url: 'https://www.sophieorta.com/',
-        img: 'ssoc.png',
+        img: 'ssoc',
         summary: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.',
         desc: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit, sint! Ipsam, eum perferendis. Nihil nesciunt fuga odit, animi quos consequuntur, commodi, totam ad eum adipisci necessitatibus. Voluptate quos atque dolores.',
       },

@@ -6,8 +6,6 @@ html(lang="en-us")
         | Sophie Orta - Full-Stack Web Developer
     block head
 
-      //- link(href="/static/fonts/fonts.min.css" rel="stylesheet")
-      //- link(href="/static/styles/normalize.css" rel="stylesheet")
       link(href="/static/styles/styles.css" rel="stylesheet")
       link(rel="icon" href="/favicon.ico")
 
@@ -17,18 +15,20 @@ html(lang="en-us")
       block header
         header.header-main.clr
           //- div.grid
-          div.col.xs-up-12.sm-up-auto.t-center.p-0
+          div.col.xs-up-12.md-up-auto.t-center.p-0
             a.logo.clr(href="/")
               div.logo__img(alt="logo" src="/static/images/logo.svg")
                 include /public/images/logo.svg
               div.logo__text
                 div.logo__name Sophie Orta
                 div.logo__title Web Developer
-          div.col.xs-up-12.sm-up-auto.nav-container
+          div.col.xs-up-12.md-up-auto.nav-container
             ul.nav
               li.nav__item
                 a(href="/" class=(currentPage==='Home' ? 'nav__item-link active' : 'nav__item-link')) Home
                   //- img(src="/static/images/icons/home.svg" alt="Home Icon
+              li.nav__item
+                a(href="/work/" class=(currentPage.indexOf('Work') >= 0 ? 'nav__item-link active' : 'nav__item-link')) Work
               li.nav__item
                 a(href="/about/" class=(currentPage==='About' ? 'nav__item-link active' : 'nav__item-link')) About
 
@@ -43,8 +43,6 @@ html(lang="en-us")
 
     noscript#deferred-styles
       link(href="/static/fonts/fonts.min.css" rel="stylesheet")
-    //-   link(href="/static/styles/normalize.css" rel="stylesheet")
-    //-   link(href="/static/styles/styles.css" rel="stylesheet")
 
     block scripts
       script(type="text/javascript" src="/static/scripts/main.min.js" async)

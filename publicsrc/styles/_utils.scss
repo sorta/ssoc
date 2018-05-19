@@ -9,9 +9,9 @@
 
 .p-0 { padding: 0; }
 
-.t-left { text-align: left; }
-.t-center { text-align: center; }
-.t-right { text-align: right; }
+.t-left { text-align: left; text-align-last: left; }
+.t-center { text-align: center; text-align-last: center; }
+.t-right { text-align: right; text-align-last: right; }
 
 .f-left { float: left; }
 .f-right { float: right; }

@@ -127,44 +127,6 @@
   }
 }
 
-// Nav
-.nav-container {
-  text-align: center;
-  padding: 0;
-
-  @include for-small-up {
-    float: right;
-  }
-}
-
-.nav {
-  // float: right;
-  display: inline-block;
-  list-style-type: none;
-  padding: 0;
-  margin: 1.6136rem 0;
-  color: $yellow;
-
-  font-family: $heading-font-stack;
-  font-size: 2rem;
-
-  @include for-small-up {
-    margin-bottom: 0;
-  }
-}
-
-.nav__item {
-  display: inline-block;
-  margin-right: $pad2;
-  margin-left: $pad2;
-}
-
-.nav__item-link {
-  &.active {
-    text-decoration: underline;
-  }
-}
-
 // Work
 
 .manager__header {

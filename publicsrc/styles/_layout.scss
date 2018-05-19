@@ -104,3 +104,41 @@
     width: auto;
   }
 }
+
+// Nav
+.nav-container {
+  text-align: center;
+  padding: 0;
+
+  @include for-small-up {
+    float: right;
+  }
+}
+
+.nav {
+  display: inline-block;
+  list-style-type: none;
+  padding: 0;
+  margin: $pad2 0;
+  color: $yellow;
+
+  font-family: $heading-font-stack;
+  font-size: 2rem;
+
+  @include for-medium-up {
+    margin-bottom: 0;
+    margin-top: 1.6136rem;
+  }
+}
+
+.nav__item {
+  display: inline-block;
+  margin-right: $pad2;
+  margin-left: $pad2;
+}
+
+.nav__item-link {
+  &.active {
+    text-decoration: underline;
+  }
+}
