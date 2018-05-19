@@ -1,7 +1,10 @@
 module.exports = {
   avibe: {
     name: 'A•Vibe',
-    desc: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis inventore dolor perspiciatis qui, obcaecati quo voluptatum aliquam rerum libero autem iure maiores expedita ipsa blanditiis sint. Quaerat, asperiores animi eaque.',
+    desc: `I worked on many projects at <a href="https://www.avibeweb.com/" target="_blank">A•Vibe Web Development</a>.
+      And while all projects had their unique challenges and accomplishments, below are some of the more interesting and demanding
+      projects that I am honored to have been a part of.
+    `,
     projects: {
       wusata: {
         name: 'WUSATA',
@@ -18,7 +21,7 @@ module.exports = {
         summary: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.',
         desc: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro, nobis excepturi voluptates enim animi iure sunt iste accusamus doloremque provident molestias vitae est assumenda, sed facilis unde ea esse facere.',
       },
-      'green-hamer': {
+      'green-hammer': {
         name: 'Green Hammer',
         url: 'http://www.greenhammer.com/',
         img: 'gh',

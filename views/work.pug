@@ -6,23 +6,24 @@ block title
 block content
   h1.page-header #{currentPage}
   div.grid
-    each manager, key in managers
+    each manager, mKey in managers
       div.manager.clr
         div.col
           h2.manager__header #{manager.name} Projects
-          p #{manager.desc}
+          p!= manager.desc
         div.manager__projects
-          each project, key in manager.projects
+          each project, pKey in manager.projects
             div.project.col.md-up-4
               h3.project__header #{project.name}
 
               if {}.hasOwnProperty.call(project, 'img')
-                img(
-                  src=`/static/res_images/projects/${project.img}_800.png`
-                  srcset=`
-                    /static/res_images/projects/${project.img}_800.png 800w,
-                    /static/res_images/projects/${project.img}_400.png 400w,
-                  `
-                ).project__image
+                a(href=`/work/${mKey}/${pKey}/`)
+                  img(
+                    src=`/static/res_images/projects/${project.img}_800.png`
+                    srcset=`
+                      /static/res_images/projects/${project.img}_800.png 800w,
+                      /static/res_images/projects/${project.img}_400.png 400w
+                    `
+                  ).project__image
               if {}.hasOwnProperty.call(project, 'summary')
                 p.project__summary #{project.summary}

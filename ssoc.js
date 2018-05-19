@@ -39,15 +39,29 @@ app.get('/work/', (req, res) => {
   res.render('work', { currentPage: 'Work', managers: projectData });
 });
 
-
 app.get('/work/:manager', (req, res) => {
   if (!{}.hasOwnProperty.call(projectData, req.params.manager)) {
-    res.status(404).render('404', { currentPage: '404' });
-  } else {
-    const managerData = {};
-    managerData[req.params.manager] = projectData[req.params.manager];
-    res.render('work', { currentPage: 'Work List', managers: managerData });
+    return res.status(404).render('404', { currentPage: '404' });
   }
+
+  const managers = { [req.params.manager]: projectData[req.params.manager] };
+  return res.render('work', { currentPage: 'Work', managers });
+});
+
+app.get('/work/:manager/:project', (req, res) => {
+  if (!{}.hasOwnProperty.call(projectData, req.params.manager)) {
+    return res.status(404).render('404', { currentPage: '404' });
+  }
+  const manager = { ...projectData[req.params.manager], slug: req.params.manager };
+
+  if (!{}.hasOwnProperty.call(manager.projects, req.params.project)) {
+    return res.status(404).render('404', { currentPage: '404' });
+  }
+  const project = { ...manager.projects[req.params.project], slug: req.params.project };
+
+  delete manager.projects;
+
+  return res.render('work-detail', { currentPage: 'Work Details', manager, project });
 });
 
 // Slashes redirect
