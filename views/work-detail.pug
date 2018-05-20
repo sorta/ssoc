@@ -5,9 +5,9 @@ block title
 
 block content
   h1.page-header #{project.name} Project Details
-  div.grid
+  div.grid.project-detail
     if {}.hasOwnProperty.call(project, 'img')
-      a(href=project.url)
+      a(href=project.url target="_blank")
         img(
           src=`/static/res_images/projects/${project.img}_1200.png`
           srcset=`
@@ -16,3 +16,9 @@ block content
             /static/res_images/projects/${project.img}_400.png 400w
           `
         ).project__image
+    div.project-detail__desc!= project.desc
+    if {}.hasOwnProperty.call(project, 'highlights') && project.highlights.length > 0
+      span.project-detail-highlights__header Other project highlights include:
+      ul.project-detail-highlights__list
+        each highlight in project.highlights
+          li #{highlight}

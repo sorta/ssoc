@@ -10,9 +10,23 @@ module.exports = {
         name: 'WUSATA',
         url: 'https://www.wusata.org/',
         img: 'wusata',
-        summary: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.',
-        desc: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium fuga dolore autem, nulla. Et quasi illum, iure rem accusantium id a, aspernatur dolores ea consectetur, dolorum placeat assumenda tenetur fuga.',
-        external_project_url: 'https://www.avibeweb.com/work/wusata/',
+        summary: `The wusata.org site is a large custom web app with complex business logic. I was involved in updates ranging from data migrations
+          to CRUD implementations to data visualizations, and much more.
+        `,
+        desc: `<p>
+          The WUSATA web app evolved quite a bit over the years,
+          and though I was involved in many updates to the system, one of the most challenging and rewarding updates was the implementation of
+          a map visualization builder. I was the primary developer for the front-end portion of that project, which utilized leaflet.js. The project
+          involved displaying data points with custom data tooltips, generating visualizations based on the data points involved, and writing a
+          custom leaflet plugin to allow for enhanced filtering capabilities.
+        </p><p>
+          Another challenging project that I was involved in was a data migration from a series of legacy databases into the WUSATA web app.
+          The migration involved pulling from hundreds of thousands of records across more than 800 tables.
+        </p>`,
+        highlights: ['Third party API integrations', 'Data visualizations utilizing ZingChart'],
+        links: [
+          { title: 'More Project Info', url: 'https://www.avibeweb.com/work/wusata/' },
+        ],
       },
       'company-site': {
         name: 'A•Vibe',
@@ -27,7 +41,9 @@ module.exports = {
         img: 'gh',
         summary: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.',
         desc: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid laboriosam similique autem, beatae dolores voluptas ab, necessitatibus nemo id, quidem quia tenetur quam, suscipit commodi inventore laudantium excepturi dicta assumenda.',
-        external_project_url: 'https://www.avibeweb.com/work/greenhammer/',
+        links: [
+          { title: 'More Project Info', url: 'https://www.avibeweb.com/work/greenhammer/' },
+        ],
       },
     },
   },
