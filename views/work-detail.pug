@@ -26,9 +26,11 @@ block content
             each highlight in project.highlights
               li.project-detail-highlights__list-item #{highlight}
 
-      if {}.hasOwnProperty.call(project, 'links') && project.links.length > 0
-        div.project-detail-links
-          ul.project-detail-links-list
+      div.project-detail-links
+        if {}.hasOwnProperty.call(project, 'links') && project.links.length > 0
+          ul.project-detail-links__list
             each link in project.links
-              li.project-detail-links-list__item
+              li.project-detail-links__list-item
                 a(href=link.url target="_blank") #{link.title}
+
+        a(href="/work/").project-detail-links__back Back to Work

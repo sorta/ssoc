@@ -10,12 +10,12 @@ module.exports = {
         name: 'WUSATA',
         url: 'https://www.wusata.org/',
         img: 'wusata',
-        summary: `The wusata.org site is a large custom web app with complex business logic. I was involved in updates ranging from data migrations
-          to CRUD implementations to data visualizations, and much more.
+        summary: `A large custom web app with complex business logic.
         `,
         desc: `<p>
-          The WUSATA web app evolved quite a bit over the years,
-          and though I was involved in many updates to the system, one of the most challenging and rewarding updates was the implementation of
+          The WUSATA web app evolved quite a bit over the years, and I was involved in updates ranging from data migrations
+          to CRUD implementations to data visualizations, and much more.
+          And though I was involved in many updates to the system, one of the most challenging and rewarding updates was the implementation of
           a map visualization builder. I was the primary developer for the front-end portion of that project, which utilized leaflet.js. The project
           involved displaying data points with custom data tooltips, generating visualizations based on the data points, and writing a
           custom leaflet plugin to allow for enhanced filtering capabilities.
@@ -36,16 +36,18 @@ module.exports = {
         desc: `<p>
           One area of the site that I was involved in was the Work List page, which you can see
           <a href="https://www.avibeweb.com/work/" target="_blank">here</a>. Another area I was involved in was the top navigation, which you can see
-          all over the site. I was the primary developer for both of these efforts, both of which used a fair amount of animation. And like I did for
-          the WUSATA project, I implemented the Gulp script for this web app.
+          all over the site. I was the primary developer for both of these efforts, both of which used a fair amount of animation. And finally, this is
+          another project where I was responsible for the Gulp script.
         </p>`,
       },
       'green-hammer': {
         name: 'Green Hammer',
         url: 'http://www.greenhammer.com/',
         img: 'gh',
-        summary: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.',
-        desc: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid laboriosam similique autem, beatae dolores voluptas ab, necessitatibus nemo id, quidem quia tenetur quam, suscipit commodi inventore laudantium excepturi dicta assumenda.',
+        summary: 'A responsive web app built from an older, non-responsive site.',
+        desc: `<p>
+          I was the primary developer for much of the current site.
+        </p>`,
         links: [
           { title: 'More Project Info', url: 'https://www.avibeweb.com/work/greenhammer/' },
         ],

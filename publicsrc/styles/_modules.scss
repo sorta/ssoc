@@ -165,20 +165,36 @@
   margin-top: $pad1;
 }
 
-.project-detail-links-list {
-  list-style-type: none;
-  padding: 0;
+.project-detail-links {
+
   text-align: center;
-  margin-bottom: 0;
+  font-size: 0.9rem;
+}
+
+.project-detail-links__back {
+  display: inline-block;
+  margin-top: $pad2;
 
   @include for-small-up {
-    text-align: right;
+    float: left;
+    margin-top: $pad1;
   }
 }
 
-.project-detail-links-list__item {
+.project-detail-links__list {
   display: block;
-  font-size: 0.9rem;
+  list-style-type: none;
+  padding: 0;
+  margin: $pad3 0 0 0;
+
+  @include for-small-up {
+    float: right;
+    margin-top: $pad1;
+  }
+}
+
+.project-detail-links__list-item {
+  display: block;
   margin-bottom: $pad1;
 
   @include for-small-up {
