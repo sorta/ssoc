@@ -1,0 +1,36 @@
+extends layout.pug
+
+block title
+  | Sophie Orta - #{project.name} Project Details
+
+block content
+  div.grid.project-detail
+    div.col
+      h1.page-header #{project.name} Project Details
+      if {}.hasOwnProperty.call(project, 'img')
+        a(href=project.url target="_blank")
+          img(
+            src=`/static/res_images/projects/${project.img}_1200.png`
+            srcset=`
+              /static/res_images/projects/${project.img}_1200.png 1200w,
+              /static/res_images/projects/${project.img}_800.png 800w,
+              /static/res_images/projects/${project.img}_400.png 400w
+            `
+          ).project__image
+      div.project-detail__desc!= project.desc
+
+      if {}.hasOwnProperty.call(project, 'highlights') && project.highlights.length > 0
+        div.project-detail-highlights
+          h5.project-detail-highlights__header Other Highlights
+          ul.project-detail-highlights__list
+            each highlight in project.highlights
+              li.project-detail-highlights__list-item #{highlight}
+
+      div.project-detail-links
+        if {}.hasOwnProperty.call(project, 'links') && project.links.length > 0
+          ul.project-detail-links__list
+            each link in project.links
+              li.project-detail-links__list-item
+                a(href=link.url target="_blank") #{link.title}
+
+        a(href="/work/").project-detail-links__back Back to Work

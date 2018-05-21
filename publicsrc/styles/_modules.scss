@@ -1,0 +1,215 @@
+//// Modules ////
+
+// Logo
+.logo {
+  display: inline-block;
+  // float: left;
+  padding: $pad1 $pad2;
+}
+
+.logo__img,
+.logo__text {
+  float: left;
+}
+
+.logo__img {
+  width: 4rem;
+  margin-right: $pad1;
+
+  > svg {
+    max-width: 88px;
+    max-height: 88px;
+  }
+}
+
+.logo__name,
+.logo__title {
+  font-family: $heading-font-stack;
+  // color: $white;
+  color: $yellow;
+  line-height: 1.2;
+}
+
+.logo__name {
+  font-size: 2rem;
+}
+
+.logo__title {
+  font-size: 1.5rem;
+  font-weight: 400;
+}
+
+// Hero
+.hero {
+  width: 100%;
+  padding: ($pad2 * 4) $pad2;
+  text-align: center;
+
+  @supports (display: flex) {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: stretch;
+  }
+
+  background-color: $yellow;
+  color: $dark-grey;
+}
+
+.hero:nth-of-type(2n) {
+  background-color: $dark-grey;
+  color: $yellow;
+}
+
+.hero--landing
+{
+  font-weight: 700;
+
+  h1, h4 {
+    font-weight: 700;
+  }
+}
+
+.hero__content {
+  width: auto;
+  display: inline-block;
+  // text-align: left;
+
+  @supports (display: flex) {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: no-wrap;
+    justify-content: center;
+    align-items: stretch;
+    flex: 1 1 auto;
+  }
+}
+
+// .hero__heading {
+//   text-align: center;
+// }
+
+// Connect Link
+.connect-link-container {
+  text-align: center;
+}
+
+.connect-link {
+  display: inline-block;
+  margin: 0 $pad2;
+  min-width: 3rem;
+  cursor: pointer;
+}
+
+.connect-link__image {
+  width: 100%;
+  height: auto;
+}
+
+.page-header {
+  text-align: center;
+  margin-top: 2.1rem;
+}
+
+// Sidebar
+.sidebar {
+  background-color: $dark-grey;
+  color: $yellow;
+  padding: $pad2;
+  float: right;
+
+  @include for-medium-up {
+    border-radius: $pad3;
+    border: $pad2 solid $yellow;
+    margin-top: -$pad2;
+  }
+}
+
+// Work
+
+.manager__header {
+  margin-top: $pad2;
+}
+
+.project__header {
+  margin-bottom: 0;
+
+  @include for-medium-up {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}
+
+.project__image {
+  border: 2px solid $dark-grey;
+}
+
+@include for-medium-up {
+  .project__summary {
+    font-size: 0.8rem;
+  }
+}
+
+// Work Details
+
+.project-detail-highlights__header {
+  border-bottom: 2px solid $dark-grey;
+  display: inline-block;
+  margin: 0;
+}
+
+.project-detail-highlights__list {
+  margin-top: $pad1;
+}
+
+.project-detail-links {
+
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+.project-detail-links__back {
+  display: inline-block;
+  margin-top: $pad2;
+
+  @include for-small-up {
+    float: left;
+    margin-top: $pad1;
+  }
+}
+
+.project-detail-links__list {
+  display: block;
+  list-style-type: none;
+  padding: 0;
+  margin: $pad3 0 0 0;
+
+  @include for-small-up {
+    float: right;
+    margin-top: $pad1;
+  }
+}
+
+.project-detail-links__list-item {
+  display: block;
+  margin-bottom: $pad1;
+
+  @include for-small-up {
+    display: inline-block;
+    padding: 0 $pad1;
+    border-left: 2px solid $dark-grey;
+    margin-bottom: 0;
+
+    &:first-of-type {
+      border-left: none;
+      padding-left: 0
+    }
+
+    &:last-of-type {
+      padding-right: 0;
+    }
+  }
+}

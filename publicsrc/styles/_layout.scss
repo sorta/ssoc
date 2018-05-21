@@ -1,0 +1,144 @@
+//// Layout ////
+
+// header
+.header-main {
+  background-color: $dark-grey;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+.content-main {
+  flex: 1 1 auto;
+}
+
+.footer-main {
+  background-color: $dark-grey;
+  color: $yellow;
+  padding: $pad1 $pad2;
+
+  border-top: 1px solid $yellow;
+}
+
+.footer__link {
+  float: right;
+}
+
+// Grid
+.grid {
+  width: 100%;
+  max-width: $grid-max-width;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.grid:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+.col {
+  display: block;
+  float: left;
+  padding: $pad2;
+  width: 100%;
+}
+
+// Column widths
+@for $i from 1 through $grid-col-count {
+  .xs-up-#{$i} {
+    width: $i / $grid-col-count * 100%;
+  }
+
+  @include for-small-up {
+    .sm-up-#{$i} {
+      width: $i / $grid-col-count * 100%;
+    }
+  }
+
+  @include for-medium-up {
+    .md-up-#{$i} {
+      width: $i / $grid-col-count * 100%;
+    }
+  }
+
+  @include for-large-up {
+    .lg-up-#{$i} {
+      width: $i / $grid-col-count * 100%;
+    }
+  }
+
+  @include for-extra-large-up {
+    .xl-up-#{$i} {
+      width: $i / $grid-col-count * 100%;
+    }
+  }
+}
+
+// Auto widths
+.xs-up-auto {
+  width: auto;
+}
+
+@include for-small-up {
+  .sm-up-auto {
+    width: auto;
+  }
+}
+
+@include for-medium-up {
+  .md-up-auto {
+    width: auto;
+  }
+}
+
+@include for-large-up {
+  .lg-up-auto {
+    width: auto;
+  }
+}
+
+@include for-extra-large-up {
+  .xl-up-auto {
+    width: auto;
+  }
+}
+
+// Nav
+.nav-container {
+  text-align: center;
+  padding: 0;
+
+  @include for-small-up {
+    float: right;
+  }
+}
+
+.nav {
+  display: inline-block;
+  list-style-type: none;
+  padding: 0;
+  margin: $pad2 0;
+  color: $yellow;
+
+  font-family: $heading-font-stack;
+  font-size: 2rem;
+
+  @include for-medium-up {
+    margin-bottom: 0;
+    margin-top: 1.6136rem;
+  }
+}
+
+.nav__item {
+  display: inline-block;
+  margin-right: $pad2;
+  margin-left: $pad2;
+}
+
+.nav__item-link {
+  &.active {
+    text-decoration: underline;
+  }
+}
