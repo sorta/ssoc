@@ -4,21 +4,31 @@ block title
   | Sophie Orta - #{project.name} Project Details
 
 block content
-  h1.page-header #{project.name} Project Details
   div.grid.project-detail
-    if {}.hasOwnProperty.call(project, 'img')
-      a(href=project.url target="_blank")
-        img(
-          src=`/static/res_images/projects/${project.img}_1200.png`
-          srcset=`
-            /static/res_images/projects/${project.img}_1200.png 1200w,
-            /static/res_images/projects/${project.img}_800.png 800w,
-            /static/res_images/projects/${project.img}_400.png 400w
-          `
-        ).project__image
-    div.project-detail__desc!= project.desc
-    if {}.hasOwnProperty.call(project, 'highlights') && project.highlights.length > 0
-      span.project-detail-highlights__header Other project highlights include:
-      ul.project-detail-highlights__list
-        each highlight in project.highlights
-          li #{highlight}
+    div.col
+      h1.page-header #{project.name} Project Details
+      if {}.hasOwnProperty.call(project, 'img')
+        a(href=project.url target="_blank")
+          img(
+            src=`/static/res_images/projects/${project.img}_1200.png`
+            srcset=`
+              /static/res_images/projects/${project.img}_1200.png 1200w,
+              /static/res_images/projects/${project.img}_800.png 800w,
+              /static/res_images/projects/${project.img}_400.png 400w
+            `
+          ).project__image
+      div.project-detail__desc!= project.desc
+
+      if {}.hasOwnProperty.call(project, 'highlights') && project.highlights.length > 0
+        div.project-detail-highlights
+          h5.project-detail-highlights__header Other Highlights
+          ul.project-detail-highlights__list
+            each highlight in project.highlights
+              li.project-detail-highlights__list-item #{highlight}
+
+      if {}.hasOwnProperty.call(project, 'links') && project.links.length > 0
+        div.project-detail-links
+          ul.project-detail-links-list
+            each link in project.links
+              li.project-detail-links-list__item
+                a(href=link.url target="_blank") #{link.title}

@@ -15,7 +15,7 @@ const cssnano = require('cssnano');
 
 const paths = {
   styles: {
-    src: './publicsrc/styles/**/*.scss',
+    src: './publicsrc/styles/*.scss',
     dest: './public/styles/',
   },
   scripts: {

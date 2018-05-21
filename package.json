@@ -5,7 +5,7 @@
   "main": "ssoc.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "clean": "rimraf public/{styles/*,scripts/*,images/*}",
+    "clean": "rimraf public/{styles/*,scripts/*,images/*,res_images/*}",
     "build": "gulp build",
     "gulp": "gulp",
     "dev": "gulp dev",

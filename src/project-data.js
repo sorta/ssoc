@@ -17,13 +17,13 @@ module.exports = {
           The WUSATA web app evolved quite a bit over the years,
           and though I was involved in many updates to the system, one of the most challenging and rewarding updates was the implementation of
           a map visualization builder. I was the primary developer for the front-end portion of that project, which utilized leaflet.js. The project
-          involved displaying data points with custom data tooltips, generating visualizations based on the data points involved, and writing a
+          involved displaying data points with custom data tooltips, generating visualizations based on the data points, and writing a
           custom leaflet plugin to allow for enhanced filtering capabilities.
         </p><p>
           Another challenging project that I was involved in was a data migration from a series of legacy databases into the WUSATA web app.
           The migration involved pulling from hundreds of thousands of records across more than 800 tables.
         </p>`,
-        highlights: ['Third party API integrations', 'Data visualizations utilizing ZingChart'],
+        highlights: ['Third party API integrations', 'Data visualizations utilizing ZingChart', 'Gulp script for minifying static assets'],
         links: [
           { title: 'More Project Info', url: 'https://www.avibeweb.com/work/wusata/' },
         ],
@@ -32,8 +32,13 @@ module.exports = {
         name: 'A•Vibe',
         url: 'https://www.avibeweb.com/',
         img: 'avibe',
-        summary: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.',
-        desc: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro, nobis excepturi voluptates enim animi iure sunt iste accusamus doloremque provident molestias vitae est assumenda, sed facilis unde ea esse facere.',
+        summary: 'The most recent incarnation of the A•Vibe company site.',
+        desc: `<p>
+          One area of the site that I was involved in was the Work List page, which you can see
+          <a href="https://www.avibeweb.com/work/" target="_blank">here</a>. Another area I was involved in was the top navigation, which you can see
+          all over the site. I was the primary developer for both of these efforts, both of which used a fair amount of animation. And like I did for
+          the WUSATA project, I implemented the Gulp script for this web app.
+        </p>`,
       },
       'green-hammer': {
         name: 'Green Hammer',
