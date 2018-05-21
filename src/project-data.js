@@ -72,6 +72,9 @@ module.exports = {
           As a result, I've only made minor updates to the site thus far. But I'm in the process now of planning and making more updates
           to the site.
         </p>`,
+        links: [
+          { title: 'Github Repository', url: 'https://github.com/sorta/ssoc' },
+        ],
       },
     },
   },

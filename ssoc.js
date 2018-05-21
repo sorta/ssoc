@@ -5,11 +5,13 @@ const compression = require('compression');
 const slash = require('express-slash');
 const uncapitalize = require('express-uncapitalize');
 const projectData = require('./src/project-data');
+const helmet = require('helmet');
 
 const app = express();
 const appPort = process.env.PORT || 3000;
 
 
+app.use(helmet());
 app.use(compression());
 app.use('/static/', express.static(path.join(__dirname, 'public')));
 app.use('/static/docs/', express.static(path.join(__dirname, 'docs')));
