@@ -26,6 +26,7 @@ module.exports = {
         highlights: ['Third party API integrations', 'Data visualizations utilizing ZingChart', 'Gulp script for minifying static assets'],
         links: [
           { title: 'More Project Info', url: 'https://www.avibeweb.com/work/wusata/' },
+          { title: 'Live Site', url: 'https://www.wusata.org/' },
         ],
       },
       'company-site': {
@@ -39,6 +40,9 @@ module.exports = {
           all over the site. I was the primary developer for both of these efforts, both of which used a fair amount of animation. And finally, this is
           another project where I was responsible for the Gulp script.
         </p>`,
+        links: [
+          { title: 'Live Site', url: 'https://www.avibeweb.com/' },
+        ],
       },
       'green-hammer': {
         name: 'Green Hammer',
@@ -50,6 +54,7 @@ module.exports = {
         </p>`,
         links: [
           { title: 'More Project Info', url: 'https://www.avibeweb.com/work/greenhammer/' },
+          { title: 'Live Site', url: 'http://www.greenhammer.com/' },
         ],
       },
     },
