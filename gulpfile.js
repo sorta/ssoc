@@ -12,6 +12,9 @@ const postcss = require('gulp-postcss');
 const autoprefixer = require('autoprefixer');
 const cssnano = require('cssnano');
 
+const {
+  parallel, series, src, task, watch,
+} = gulp;
 
 const paths = {
   styles: {
@@ -48,65 +51,62 @@ const processors = [
   cssnano,
 ];
 
-const imageSizes = [1200, 800, 400];
+task('build:styles', () => src(paths.styles.src)
+  .pipe(sourcemaps.init())
+  .pipe(sass().on('error', sass.logError))
+  .pipe(postcss(processors))
+  .pipe(sourcemaps.write('.'))
+  .pipe(gulp.dest(paths.styles.dest)));
 
-gulp.task('build:styles', () => {
-  gulp.src(paths.styles.src)
-    .pipe(sourcemaps.init())
-    .pipe(sass().on('error', sass.logError))
-    .pipe(postcss(processors))
-    .pipe(sourcemaps.write('.'))
-    .pipe(gulp.dest(paths.styles.dest));
-});
+task('build:scripts', () => src(paths.scripts.src)
+  .pipe(sourcemaps.init())
+  .pipe(uglify())
+  .pipe(rename({ suffix: '.min' }))
+  .pipe(sourcemaps.write('.'))
+  .pipe(gulp.dest(paths.scripts.dest)));
 
-gulp.task('build:scripts', () => {
-  gulp.src(paths.scripts.src)
-    .pipe(sourcemaps.init())
-    .pipe(uglify())
-    .pipe(rename({ suffix: '.min' }))
-    .pipe(sourcemaps.write('.'))
-    .pipe(gulp.dest(paths.scripts.dest));
-});
+task('build:images', () => src(paths.images.src)
+  .pipe(imagemin())
+  .pipe(gulp.dest(paths.images.dest)));
 
-gulp.task('build:images', () => {
-  gulp.src(paths.images.src)
-    .pipe(imagemin())
-    .pipe(gulp.dest(paths.images.dest));
-});
+task('build:responsive:1200', () => src(paths.res_images.src)
+  .pipe(imageResize({ width: 1200, imageMagick: true }))
+  .pipe(imagemin())
+  .pipe(rename({ suffix: '_1200' }))
+  .pipe(gulp.dest(paths.res_images.dest)));
 
-gulp.task('build:responsive_images', () => {
-  imageSizes.forEach((size) => {
-    gulp.src(paths.res_images.src)
-      .pipe(imageResize({ width: size, imageMagick: true }))
-      .pipe(imagemin())
-      .pipe(rename({ suffix: `_${size}` }))
-      .pipe(gulp.dest(paths.res_images.dest));
-  });
-});
+task('build:responsive:800', () => src(paths.res_images.src)
+  .pipe(imageResize({ width: 800, imageMagick: true }))
+  .pipe(imagemin())
+  .pipe(rename({ suffix: '_800' }))
+  .pipe(gulp.dest(paths.res_images.dest)));
 
-gulp.task('build:fonts', () => {
-  gulp.src(paths.fonts.src)
-    .pipe(gulp.dest(paths.fonts.dest));
-});
+task('build:responsive:400', () => src(paths.res_images.src)
+  .pipe(imageResize({ width: 400, imageMagick: true }))
+  .pipe(imagemin())
+  .pipe(rename({ suffix: '_400' }))
+  .pipe(gulp.dest(paths.res_images.dest)));
 
-gulp.task('build', ['build:styles', 'build:scripts', 'build:images', 'build:responsive_images', 'build:fonts']);
+task('build:responsive:all', series([
+  'build:responsive:1200', 'build:responsive:800', 'build:responsive:400',
+]));
 
-gulp.task('watch:scripts', () => {
-  gulp.watch(paths.scripts.src, ['build:scripts']);
-});
+task('build:fonts', () => src(paths.fonts.src)
+  .pipe(gulp.dest(paths.fonts.dest)));
 
-gulp.task('watch:styles', () => {
-  gulp.watch(paths.styles.src, ['build:styles']);
-});
+task('build', parallel(['build:styles', 'build:scripts', 'build:images', 'build:responsive:all', 'build:fonts']));
 
-gulp.task('watch:images', () => {
-  gulp.watch(paths.images.src, ['build:images', 'build:responsive_images']);
-});
+task('watch:scripts', () => watch(paths.scripts.src, parallel(['build:scripts'])));
 
-gulp.task('watch', ['watch:styles', 'watch:scripts', 'watch:images']);
+task('watch:styles', () => watch(paths.styles.src, parallel(['build:styles'])));
 
-gulp.task('serve', () => {
-  nodemon({ script: 'ssoc.js' });
-});
+task('watch:images', () => watch(paths.images.src,
+  parallel(['build:images', 'build:responsive:all'])));
 
-gulp.task('dev', ['build', 'watch', 'serve']);
+task('watch', parallel(['watch:styles', 'watch:scripts', 'watch:images']));
+
+task('serve', (done) => nodemon({ script: 'ssoc.js', done }));
+
+task('dev-serve', parallel(['watch', 'serve']));
+
+task('dev', series(['build', 'dev-serve']));

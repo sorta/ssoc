@@ -72,14 +72,19 @@ module.exports = {
           I started to build this site in 2016, partially as a way to explore techniques and technologies. As a means of getting
           the site up and running quickly, I decided to forego the use of a DB for the initial implementation. The site is hosted on
           Digital Ocean, and uses Express.js, SCSS, Gulp, Pug, and Autoprefixer.
-        </p><p>
-          In general my life is fairly busy, especially in the last year or so as I've been planning a move to another country.
-          As a result, I've only made minor updates to the site thus far. But I'm in the process now of planning and making more updates
-          to the site.
         </p>`,
         links: [
           { title: 'Github Repository', url: 'https://github.com/sorta/ssoc' },
         ],
+      },
+      'headcanon-generator': {
+        name: 'Headcanon Generator',
+        url: 'https://headcanongenerator.com/',
+        img: 'hcg',
+        summary: 'Generates headcanons',
+        desc: `<p>
+          An app that I used to explore working with React. It also utilizes Jest, Enzyme, PostCSS, and Firebase.
+        </p>`,
       },
     },
   },

@@ -4,8 +4,8 @@ const favicon = require('serve-favicon');
 const compression = require('compression');
 const slash = require('express-slash');
 const uncapitalize = require('express-uncapitalize');
-const projectData = require('./src/project-data');
 const helmet = require('helmet');
+const projectData = require('./src/project-data');
 
 const app = express();
 const appPort = process.env.PORT || 3000;
@@ -77,3 +77,6 @@ app.use((req, res) => {
 app.listen(appPort, () => {
   console.log(`Listening on http://localhost: ${(appPort)}`);
 });
+
+// Export for testing
+module.exports = app;
