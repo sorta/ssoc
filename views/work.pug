@@ -14,7 +14,7 @@ block content
         div.manager__projects
           each project, pKey in manager.projects
             div.project.col.md-up-4
-              h3.project__header #{project.name}
+              h3.project__header(title=project.name) #{project.name}
 
               if {}.hasOwnProperty.call(project, 'img')
                 a(href=`/work/${mKey}/${pKey}/`)
