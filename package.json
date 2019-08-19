@@ -4,7 +4,7 @@
   "description": "Personal site",
   "main": "ssoc.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "mocha --exit",
     "clean": "rimraf public/{styles/*,scripts/*,images/*,res_images/*}",
     "build": "gulp build",
     "gulp": "gulp",
@@ -34,6 +34,8 @@
   },
   "devDependencies": {
     "autoprefixer": "^9.6.1",
+    "chai": "^4.2.0",
+    "chai-http": "^4.3.0",
     "cssnano": "^4.1.10",
     "eslint": "^6.2.0",
     "eslint-config-airbnb": "^18.0.1",
@@ -49,6 +51,7 @@
     "gulp-sass": "^4.0.2",
     "gulp-sourcemaps": "^2.6.5",
     "gulp-uglify": "^3.0.2",
+    "mocha": "^6.2.0",
     "nodemon": "^1.19.1"
   }
 }
