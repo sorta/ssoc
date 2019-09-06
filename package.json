@@ -7,7 +7,6 @@
     "test": "mocha --exit",
     "clean": "rimraf public/{styles/*,scripts/*,images/*,res_images/*} && rimraf node_modules",
     "build": "gulp build",
-    "build-docker": "npm run clean && docker image build -t ssoc .",
     "gulp": "gulp",
     "dev": "gulp dev",
     "start": "node ssoc"
