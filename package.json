@@ -5,7 +5,7 @@
   "main": "ssoc.js",
   "scripts": {
     "test": "mocha --exit",
-    "clean": "rimraf public/{styles/*,scripts/*,images/*,res_images/*}",
+    "clean": "rimraf public/{styles/*,scripts/*,images/*,res_images/*} && rimraf node_modules",
     "build": "gulp build",
     "gulp": "gulp",
     "dev": "gulp dev",
@@ -27,21 +27,10 @@
     "express": "^4.17.1",
     "express-slash": "^2.0.1",
     "express-uncapitalize": "^1.0.0",
-    "helmet": "^3.20.0",
+    "helmet": "^3.21.0",
     "normalize.css": "^8.0.1",
     "pug": "^2.0.4",
-    "serve-favicon": "^2.5.0"
-  },
-  "devDependencies": {
-    "autoprefixer": "^9.6.1",
-    "chai": "^4.2.0",
-    "chai-http": "^4.3.0",
-    "cssnano": "^4.1.10",
-    "eslint": "^6.2.0",
-    "eslint-config-airbnb": "^18.0.1",
-    "eslint-plugin-import": "^2.18.2",
-    "eslint-plugin-jsx-a11y": "^6.2.3",
-    "eslint-plugin-react": "^7.14.3",
+    "serve-favicon": "^2.5.0",
     "gulp": "^4.0.2",
     "gulp-image-resize": "^0.13.1",
     "gulp-imagemin": "^6.1.0",
@@ -51,7 +40,18 @@
     "gulp-sass": "^4.0.2",
     "gulp-sourcemaps": "^2.6.5",
     "gulp-uglify": "^3.0.2",
+    "cssnano": "^4.1.10",
+    "autoprefixer": "^9.6.1"
+  },
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "chai-http": "^4.3.0",
+    "eslint": "^6.3.0",
+    "eslint-config-airbnb": "^18.0.1",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-react": "^7.14.3",
     "mocha": "^6.2.0",
-    "nodemon": "^1.19.1"
+    "nodemon": "^1.19.2"
   }
 }
