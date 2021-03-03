@@ -29,7 +29,7 @@
     "express-uncapitalize": "^1.0.0",
     "helmet": "^3.21.0",
     "normalize.css": "^8.0.1",
-    "pug": "^2.0.4",
+    "pug": "^3.0.1",
     "serve-favicon": "^2.5.0",
     "gulp": "^4.0.2",
     "gulp-image-resize": "^0.13.1",
